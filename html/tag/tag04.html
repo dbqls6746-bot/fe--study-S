@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<img>
+    
+    <!--
+        a 태그 : 어떤 링크/대상 으로 이동하는 태그
+
+        href 속성 : 이동할 경로
+        target 속성 : 어떻게 띄울건지
+            _blank : 새창
+            _self  : 현재창
+    -->
+
+    <a href="https://www.naver.com/" target="_self" title="네이버링크">네이버이동</a>
+    <br>
+    <a href="https://www.google.com/" target="_blank" title="구글링크">구글이동</a>
+    <br>
+
+    <a href="tag03.html" target="_self">tag03.html로 이동</a>
+    <a href="./tag03.html" target="_self">tag03.html로 이동</a>
+    <a href="../start.html" target="_self">start.html로 이동</a>
+    <a href="../quiz/quiz01.html" target="_self">quiz01.html로 이동</a>
+
+    <!-- . 현재경로  .. 한단계 상위경로 -->
+
+
+    <!--
+        이미지태그 이미지표시 img
+
+        src속성 : 보여줄 이미지 소스경로
+    -->
+    <img src="img001.jpg" alt="간장사진">  <!--현재 파일과 동일경로 -->
+    <img src="./img001.jpg" alt="간장사진"> <!--현재 파일과 동일경로 -->
+    <img src="./img/img002.jpg" alt="블루베리사진"> <!--하위 폴더 경로 -->
+
+    <br><br>
+    <img src="../../images/img001.jpg" alt="간장사진">
+    <img src="../../images/img002.jpg" alt="블루베리사진">
+    <!-- 상위 다른 폴더 경로 -->
+
+    <!-- 외부 이미지 링크 주소를 통해서 연결 -->
+    <img src="https://thumbnail6.coupangcdn.com/thumbnails/remote/160x160ex/image/travel_reactor/travelSeller/common/A01310517/274cda2d-fc0e-4186-b08a-26b497c3228a.jpg" alt="아쿠아리움사진">
+    <img src="https://thumbnail4.coupangcdn.com/thumbnails/remote/160x160ex/image/vendor_inventory/980e/98fa41d7e7d2a9dc6d806fe5cbaaadb0ddc66e3b7bacb04d40614571ffa3.png" alt="고양이사진">
+    
+
+    <br><br>
+
+    <!-- 링크 a 태그 내부에 이미지 사용 -->
+    <a href="https://www.coupang.com/vp/products/6183961013?itemId=27125822670&vendorItemId=94093862441&sourceType=srp_product_ads&clickEventId=918b3310-3e0a-11f1-abee-db0fbd4a4ce3&from=home_CategoryBest_ranking&traid=home_CategoryBest_ranking" target="_blank">
+        <img src="https://thumbnail4.coupangcdn.com/thumbnails/remote/160x160ex/image/vendor_inventory/980e/98fa41d7e7d2a9dc6d806fe5cbaaadb0ddc66e3b7bacb04d40614571ffa3.png" alt="고양이사진">
+    </a>
+
+
+</body>
+</html>
