@@ -6,29 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="#">
-        <label for="name">고객명 : </label>
-        <input type="text">
+    <form>
+        고객명 : <input type="text">
 
-        <br>
+        <br><br>
 
-        <label for="phone">전화번호 : </label>
-        <input type="text">
+        전화번호 : <input type="text">
 
-        <br>
+        <br><br>
 
-        <label for="email">E-mail : </label>
-        <input type="text">
+        E-mail : </label><input type="text">
 
-        <p>
-            <label for="selectpz">피자선택 : </label>
-            <select id="selectpz">
-                <option value="1">피자를 선택하세요</option>
-                <option value="2">치즈 피자</option>
-                <option value="3">페페로니 피자</option>
-                <option value="4">콤비네이션 피자</option>
+        <br><br>
+
+        피자선택 : 
+        <select id="selectpz">
+            <option selected disabled></option>피자를 선택하세요</option>
+            <option>치즈 피자</option>
+            <option>페페로니 피자</option>
+            <option>콤비네이션 피자</option>
             </select>
-        </p>
 
         <fieldset>
             <legend>피자 사이즈</legend>
@@ -42,22 +39,19 @@
 
         <fieldset>
             <legend>토핑선택</legend>
-                <label><input type="checkbox" value="bacon">베이컨</label>
+                <label><input type="checkbox">베이컨</label>
                 <br><br>
-                <label><input type="checkbox" value="cheese">치즈</label>
+                <label><input type="checkbox">치즈</label>
                 <br><br>
-                <label><input type="checkbox" value="onion">양파</label>
+                <label><input type="checkbox">양파</label>
                 <br><br>
-                <label><input type="checkbox" value="mushroom">버섯</label>
+                <label><input type="checkbox">버섯</label>
                 <br><br>
         </fieldset>
 
-        <p>
-            <label for="selectcf">희망배송시간 :</label>
-            <input type="time"><br>
-        </p>
 
-        <label>배송시 요청사항 : <textarea></textarea></label>
+        희망배송시간 : <input type="time"><br><br>
+        배송시 요청사항 : <textarea></textarea>
     
         <br><br>
 
