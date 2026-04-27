@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gasoek+One&family=Single+Day&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+        .font-attr1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 30px;
+            font-variant: small-caps;
+            color: violet;
+            letter-spacing: 10px;
+            line-height: 50px;
+        }
+
+        .font-attr2 {
+            /* 700 bold */
+            font-weight: 700;
+            font-style: oblique;
+            /* 
+            italic : 이텔릭체
+            oblique : 기울임
+            */
+        }
+
+        .font-box {
+            /* 정렬 */
+            text-align: center;
+
+            font-size: 24px;
+        }
+
+        .gasoek-one-regular {
+            font-family: "Gasoek One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .cute-font-regular {
+            font-family: "Cute Font", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .single-day-regular {
+            font-family: "Single Day", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .inbox1 {
+            /* em 상대크기 부모요소의 크기 대비 */
+            font-size: 2em;
+        }
+
+        .inbox2 {
+            /* rem 상대크기 */
+            /* HTML 크기 대비 */
+            /* HTML 기본 텍스트 크기 16px */
+            font-size: 2rem;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+    <p>기본 텍스트 Font attr1</p>
+
+    <p class="font-attr1">Front attr1 </p>
+    <p class="font-attr2">Front attr2 글씨 속성</p>
+
+    <i>Font attr</i>
+
+    <div class="font-box">
+        <p class="gasoek-one-regular">font box 글자 1111</p>
+        <p class="inbox1">font box 글자 2222</p>
+        <p class="inbox2">font box 글자 3333</p>
+    </div>
+
+    <div class="font-box2">
+        <p class="gasoek-one-regular">font box 글자 1111</p>
+        <p class="inbox1">font box 글자 2222</p>
+        <p class="inbox2">font box 글자 3333</p>
+    </div>
+
+
+    <p>
+        오늘의 특가
+        <del>5,000원</del>
+        <ins>3,000원</ins>
+    </p>
+    <p>
+        오늘의 특사
+        <span style="text-decoration: line-through;">5,000원</span>
+        <span style="text-decoration: underline;">3,000원</span>
+    </p>
+
+</body>
+
+</html>
