@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+    /* transition 버전 */
         div {
             width: 300px;
             height: 300px;
             border: 2px solid blue;
+
+            position: absolute;
+            background-image : url("../../images/ocean.jpg");
+
+            transition-property: all;
+            transition-duration: 2s;
         }
 
         div:hover {
@@ -19,20 +26,11 @@
             height: 600px;
             position: relative;
         }
-
-        .sub{
-            
-            position: absolute;
-            background-image : url("../../images/ocean.jpg");
-
-            transition-property: all;
-            transition-duration: 2s;
-        }
     </style>
 </head>
 
 <body>
-        <div class="sub"></div>
+    <div></div>
 </body>
 
 </html>
