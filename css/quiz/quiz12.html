@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header 영역 */
+        .container {
+            width: 700px;
+            margin: 0 auto;
+            border: 2px solid black;
+            margin-top: 50px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            background-color: red;
+            width: 200px;
+            height: 100px;
+            color: white;
+            text-align: center;
+
+        }
+
+        .header-right {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            color: white;
+            text-align: center;
+
+        }
+
+        /* Main 영역 */
+        .main {
+            display: flex;
+        }
+
+        .main-left {
+            height: 300px;
+            background-color: orange;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            /* align-items: center; */
+            align-content:center;
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            margin: 30px;
+            background-color: black;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        .box:hover {
+            transform: scale(1.5);
+            z-index: 10;
+            position: relative;
+            
+        }
+
+        .main-right {
+            height: 300px;
+            background-color: green;
+            color: white;
+            width: 30%;
+            text-align: center;
+
+        }
+
+
+        /* Footer 영역 */
+        .footer {
+            width: 100%;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left item content-center">메인메뉴</div>
+            <div class="header-right item content-center">마이페이지</div>
+        </div>
+        <div class="main">
+            <div class="main-left">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="main-right item content-center">aside</div>
+        </div>
+        <div class="footer item content-center">footer</div>
+    </div>
+</body>
+
+</html>
