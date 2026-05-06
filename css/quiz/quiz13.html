@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: wrap;
+        }
+
+        .header-left {
+            width: 50%;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        .header-right {
+            width: 50%;
+            height: 100px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        .nav {
+            width: 100%;
+            height: 100px;
+            background-color: purple;
+            flex-wrap: wrap;
+        }
+
+        .main-left {
+            width: 40%;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+
+        .main-right1 {
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        .main-right2 {
+            height: 100px;
+            background-color: orange;
+            border: 1px solid black;
+        }
+
+        .main-right {
+            width: 60%;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .footer1 {
+            width: 25%;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        .footer2 {
+            width: 25%;
+            height: 100px;
+            background-color: orange;
+            border: 1px solid black;
+        }
+
+        .footer3 {
+            width: 25%;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+
+        .footer4 {
+            width: 25%;
+            height: 100px;
+            background-color: green;
+            border: 1px solid black;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+
+        }
+
+        @media screen and (max-width:700px) {
+            .container {
+                width: 700px;
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            .container {
+                width: 100%;
+
+            }
+
+            .footer1, .footer2, .footer3,.footer4 {
+                width: 50%;
+            }
+
+            .footer{
+                flex-wrap: wrap;
+            }
+        }
+
+
+        @media screen and (max-width:500px) {
+            .container {
+                width: 100%;
+            }
+
+            .header, .main {
+                flex-direction: column;
+            }
+
+            .main-right{
+                display: flex;
+                width: 100%;
+            }
+
+            .header-left, .header-right, .main-left {
+                width: 100%;
+                height: 100px;
+            }
+
+            .main-right1, .main-right2 {
+                width:50%
+            }
+        }
+
+        @media screen and (max-width:350px) {
+            .container {
+                width: 350px;
+            }
+            .footer1, .footer2, .footer3, .footer4 {
+                    width: 100%;
+                }
+
+            .main-right{
+                flex-direction: column;
+            }
+
+            .main-right1, .main-right2 {
+                width:100%
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-left"></div>
+            <div class="header-right"></div>
+        </div>
+        <div class="nav"></div>
+        <div class="main">
+            <div class="main-left"></div>
+            <div class="main-right">
+                <div class="main-right1"></div>
+                <div class="main-right2"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+            <div class="footer4"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
