@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>글자</p>
+    </div>
+
+    <div class="container">
+        <div class="box a" id="box-a-id">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+    </div>
+
+    <p id="target">text<span style="display: none;">hidden</span></p>
+
+    <script>
+        const boxA = document.getElementById('box-a-id'); //id 로 선택
+        console.log(boxA);
+
+        const boxes = document.getElementsByClassName('box'); //class 이름을 선택
+        console.log(boxes);
+
+        const cBoxes = document.getElementsByClassName('c');
+        console.log(cBoxes);
+        console.log(cBoxes[0]);
+
+        // css 선택자 스타일로 선택
+        // 단일 선택 : querySelector
+        // 다중 선택 : querySelectorAll
+
+        const boxCss = document.querySelector('#box-a-id'); //단일선택 id선택
+        console.log(boxCss);
+
+        const boxesCss = document.querySelectorAll('.box'); //다중선택 class
+        console.log(boxesCss);
+        console.log(boxesCss[0]);
+
+        console.log( document.querySelector('.c') );
+        console.log( document.querySelectorAll('.c') );
+        console.log( document.querySelectorAll('.c')[0] );
+
+        //선택 이후, js 요소 활용  
+    
+
+        //const p_target = document.querySelector('target');
+        const p_target = document.getElementById('target');
+
+        console.log( p_target.textContent);
+        console.log( p_target.innerText);
+        console.log( p_target.innerHTML);
+
+        //p_target.textContent= 'js에서 접근해서 텍스트 수정하기'
+        //p_target.innerText= 'js에서 접근해서 텍스트 수정하기'
+
+        // p_target.textContent= 'textContent 값 수정 <strong>스트롱</strong> 수정';
+        // p_target.innerText= 'textContent 값 수정 <strong>스트롱</strong> 수정';
+        p_target.innerHTML= 'textContent 값 수정 <strong>스트롱</strong> 수정';
+    </script>
+</body>
+</html>
