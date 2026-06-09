@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>달식당 좋아요<span id="btn-heart" style="cursor:pointer;">♡</span><span id="count">0</span></h2>
+
+    <script>
+        let likeCount = 0;
+
+        const heart = document.getElementById('btn-heart');
+        const countNum= document.getElementById('count');
+
+
+        heart.addEventListener('click', ()=>{
+            likeCount++;
+            console.log(likeCount);
+
+
+            countNum.textContent = likeCount;
+        })
+
+        
+
+    </script>
+</body>
+</html>
