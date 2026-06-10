@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width : 100px;
+            height : 100px;
+            background-color: forestgreen;
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="pid">기본 텍스트</p>
+
+    <div class="box"></div>
+
+    <button onclick="clearIntervalBox()">박스 멈추기</button>
+
+    <p id="clock"></p>
+    <script>
+
+        //setTimeout(콜백함수, 시간) ms 단위    시간 이후에 콜백함수 실행
+        setTimeout(()=>{
+            document.getElementById('pid').textContent = "3초 뒤에 바뀐 텍스트"
+        }, 3000)
+
+        setTimeout(()=>{
+            document.getElementById('pid').style.color= 'red';
+        }, 5000)
+
+        //setInterval(콜백함수, 시간) ms 단위   시간간격마다 콜백함수 실행
+
+        const div_box = document.querySelectorAll('.box')[0];
+
+        let leftValue = 0;
+        const  boxMoveInterval = setInterval(()=>{
+            console.log(div_box.style.left);
+
+            leftValue = leftValue + 50;
+            div_box.style.left=leftValue + 'px';    // left:    left:50px
+
+            if( leftValue >= 600){
+                leftValue = 0;
+            }
+
+        },1000)
+
+        function clearIntervalBox(){
+            clearInterval(boxMoveInterval);
+        }
+
+        setInterval(()=>{
+
+            const current = new Date();
+            const time = String(current.getHours()).padStart(2,'0')
+                        + ":" + String(current.getMinutes()).padStart(2, '0')
+                        + ":" + String(current.getSeconds()).padStart(2,'0');
+
+            document.getElementById('clock').textContent = time;
+
+        },1000)
+    </script>
+</body>
+</html>
