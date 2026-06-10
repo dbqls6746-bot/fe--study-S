@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 필요시 작성 */
+        .bg-gray {
+            background-color: gray;
+        }
+
+        .text-red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="main">
+            <p id="p1">p1 텍스트</p>
+            <p id="p2">p2 텍스트</p>
+        </div>
+    </div>
+    <button onclick="changeMain()">main 배경색 gray로 변경</button>
+    <button onclick="changeP1()">p1 글자색 red로 변경</button>
+    <button onclick="changeP2()">"p2 텍스트"를 "p2 글자" 로 변경</button>
+    <button onclick="resetMain()">main 배경색 white로 리셋</button>
+    <button onclick="resetP1()">p1 글자색 black로 리셋</button>
+
+    <script>
+        /* 코드 작성 부분 */
+        const mainBox = document.getElementById('main');
+        const p1id = document.getElementById('p1'   );
+        const p2id = document.getElementById('p2');
+
+        function changeMain() {
+            mainBox.classList.toggle('bg-gray')
+        }
+
+        function changeP1() {
+            p1id.classList.toggle('text-red')
+        }
+
+        let p2Index = 0;
+        const p2Text = ['p2 텍스트', 'p2 하나', 'p2 둘', 'p2 셋', 'p2 넷'];
+
+        function changeP2() {
+            p2Index = (p2Index + 1) % p2Text.length;
+
+            p2id.textContent = p2Text[p2Index];
+        }
+
+        function resetMain() {
+            mainBox.classList.remove('bg-gray')
+        }
+
+        function resetP1() {
+            p1id.classList.remove('text-red')
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- +++++ 응용버전 1
+버튼을 2개 추가합니다.
+추가버튼 1. main 배경색을 white 로 다시 변경하기
+추가버튼 2. p1 글자색 다시 black 로 다시 변경하기
+
+
++++++ 응용버전 2
+main 배경색 gray로 변경 버튼을 누를때마다 배경색 적용/해제가 작동함
+p1 글자색 red로 변경 버튼을 누를때마다 글자색 적용/해제가 작동함
+
+
+"p2 텍스트"를 "p2 글자" 로 변경 버튼을 누를때마다 글자가 아래 순서대로 계속 바뀜.
+
+
+p2 텍스트
+p2 하나
+p2 둘
+p2 셋
+p2 넷
+p2 텍스트
+...(계속 순환) -->
