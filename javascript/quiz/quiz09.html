@@ -1,0 +1,89 @@
+<!-- form 내부에 input 에서 엔터키 입력시, submit 을 발생시킴 주의
+preventDefault() 수행해야 막을수 있음 -->
+
+
+<!-- <input type="text" id="loginId" placeholder="아이디"><br>
+<input type="password" id="loginPw" placeholder="비밀번호"><br>
+<button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br> -->
+
+<!-- *로그인 버튼을 누르면.
+> 아이디와 비밀번호에 있는 입력된 텍스트를 없애기
+
+*아이디 입력칸에서 키보드 입력 시,
+무슨 키가 눌렸는지 확인 해보고 엔터가 눌리면 비밀번호 입력 칸으로 이동
+
+*비밀번호 입력칸에서 키보드 입력 시,
+엔터가 눌리면 로그인 버튼을 누른것과 동일한 기능을 수행
+
+
++Option 1
+
+위 입력값들을 form 태그로 감싸고, 동일하게 작동하도록 수정하세요.
+
++Option 2
+로그인 시도 버튼을 눌렀을때,
+만약 비어있는 입력값이 있다면 해당 값을 입력하라고 메시지를 띄우고 해당 입력칸으로 이동시키세요.
+
+ex)
+아이디 입력 , 비밀번호 입력 -> 로그인시도 그대로 진행
+아이디 입력 , 비밀번호 빈칸 -> 로그인시도시 비밀번호 입력 안내 후 비밀번호 칸으로 이동
+아이디 빈칸, 비밀번호 입력 -> 로그인시도시 아이디 입력 안내 후 아이디 칸으로 이동
+아이디 빈칸, 비밀번호 빈칸 -> 로그인시도시 아이디 입력 안내 후 아이디 칸으로 이동
+
+
+*basecode -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="loginForm">
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+    </form>
+
+    <script>
+        //코드작성
+        const id = document.getElementById('loginId');
+        const pw = document.getElementById('loginPw');
+        const form = document.getElementById('loginForm');
+
+        id.addEventListener('keydown', (event) => {
+            console.log('누른키:', event.key);
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                pw.focus();
+            }
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (id.value.trim() === '') {
+                alert('아이디를 입력해 주세요!')
+                id.focus();
+                return;
+            }
+
+            if (pw.value.trim() === '') {
+                alert('비밀번호를 입력해 주세요!')
+                pw.focus();
+                return;
+            }
+
+            console.log('로그인 성공!')
+            console.log('ID:', id.value);
+            console.log('비밀번호:', pw.value);
+        })
+    </script>
+</body>
+
+</html> 
