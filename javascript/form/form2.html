@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form_main">
+
+        <p>토핑 옵션 선택</p>
+        치즈<input type="checkbox" id="chb_cs" class="chb_option">
+        크림<input type="checkbox" id="chb_cr" class="chb_option" value="cream_option" name="">
+        페페로니<input type="checkbox" id="chb_pp" checked class="chb_option">
+        <button type="button" id="btn_fullOption">토핑 전체 선택</button>
+
+
+        <br><br>
+
+        대<input type="radio" id="rd_large" name="size" value="30">
+        중<input type="radio" id="rd_medium" name="size" value="20">
+        소<input type="radio" id="rd_small" name="size" value="10">
+
+        <br><br>
+        <select id="select_order">
+            <option value="here">매장식사</option>
+            <option value="togo">포장</option>
+            <option value="delivery">배달</option>
+        </select>
+        <button type="button" id="btn_check">셀렉트박스확인버튼</button>
+
+    </form>
+
+    <script>
+
+        console.log(  document.getElementById('chb_cr').checked );
+        console.log(  document.getElementById('chb_pp').checked );
+        //document.getElementById('chb_cs').checked = true;
+
+        document.querySelector('#btn_fullOption').addEventListener('click', ()=>{
+            //체크박스들 전부 check
+            // document.getElementById('chb_cs').checked = true;
+            // document.getElementById('chb_cr').checked = true;
+            // document.getElementById('chb_pp').checked = true;
+            const chb_option = document.getElementsByClassName('chb_option');
+            // for(let i=0; i<chb_option.length; i++){
+            //     chb_option[i].checked = true;
+            // }
+            for(const chb of chb_option){
+                chb.checked = true;
+            }
+        })
+
+        document.getElementById('rd_large').checked = true;
+        console.log(document.getElementById('rd_large').checked);
+        console.log(document.getElementById('rd_large').value);
+
+        document.getElementById('btn_check').addEventListener('click', ()=>{
+            console.log( document.getElementById('select_order').value);
+
+            const select_options = document.querySelectorAll('#select_order option');
+
+            for(const option of select_options){
+                console.log('option : ' + option.value + " " + option.selected + " " + option.textContent);
+            }
+        })
+
+    </script>
+</body>
+</html>
